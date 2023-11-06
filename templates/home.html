@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome, {{ session['username'] }}!</h1>
+    
+    <!-- Agrega un contenedor para la cámara -->
+    <div id="camera-container"></div>
+    
+    <button id="verificar-cedula-button" class="home-button">Verificar Cédula</button>
+    <a href="/generar-informe" class="home-button">Generar Informe</a>
+    <a href="/logout">Logout</a>
+    
+    <script>
+        const verificarCedulaButton = document.getElementById("verificar-cedula-button");
+        const cameraContainer = document.getElementById("camera-container");
+
+        verificarCedulaButton.addEventListener("click", function () {
+            // Accede a la cámara del dispositivo
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                    const videoElement = document.createElement("video");
+                    videoElement.srcObject = stream;
+                    videoElement.setAttribute("autoplay", "true"); // Reproducir automáticamente el video
+                    cameraContainer.appendChild(videoElement);
+
+                    // Detén la cámara después de 5 segundos
+                    setTimeout(function () {
+                        videoElement.srcObject.getTracks().forEach(function (track) {
+                            track.stop();
+                        });
+                        cameraContainer.removeChild(videoElement);
+                    }, 5000);
+                })
+                .catch(function (error) {
+                    console.error("Error al acceder a la cámara:", error);
+                });
+        });
+    </script>
+</body>
+</html>
+
