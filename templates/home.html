@@ -15,7 +15,7 @@
     <a href="/logout">Logout</a>
     
     <script>
-        const verificarCedulaButton = document.getElementById("verificar-cedula-button");
+       const verificarCedulaButton = document.getElementById("verificar-cedula-button");
         const cameraContainer = document.getElementById("camera-container");
 
         verificarCedulaButton.addEventListener("click", function () {
@@ -33,9 +33,12 @@
                             track.stop();
                         });
                         cameraContainer.removeChild(videoElement);
+
+                        // Redirige a la página deseada después de 5 segundos
+                        window.location.href = '/mostrar_datos'; // Cambia '/otra-pagina' por la URL que desees
                     }, 5000);
                 })
-                .catch(function (error) {
+                .catch(function (error) {   
                     console.error("Error al acceder a la cámara:", error);
                 });
         });
