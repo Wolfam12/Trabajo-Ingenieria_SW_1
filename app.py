@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import os
 import sqlite3
+import random
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -12,13 +13,16 @@ def conectar_bd():
     conn = sqlite3.connect('Bdd\BasesDatosRegistraduria.db')
     return conn
 
+def conectar_bd1():
+    conn = sqlite3.connect('Bdd\BasesDatosRegistraduria.db')
+    return conn
 @app.route('/')
 def home():
     if 'username' in session:
         # Recupera los datos de la base de datos
         connection = conectar_bd()
         cursor = connection.cursor()
-        cursor.execute('SELECT * FROM Personas')
+        cursor.execute('SELECT * FROM Personass')
         datos = cursor.fetchall()
         connection.close()
 
@@ -44,19 +48,49 @@ def logout():
 @app.route('/mostrar_datos')
 def otra_pagina():
     if 'username' in session:
-        # Conecta a la base de datos
-        connection = sqlite3.connect('BasesDatosRegistraduria.db')
+        # Recupera los datos de la base de datos
+         
+
+        numero_aleatorio = random.randint(1, 30)
+        frase = "SELECT * FROM Personass where id = "
+        frase_concatenada = frase + " " + str(numero_aleatorio)
+        frease1 = "INSERT INTO Reporte (Nombres, Apellidos, Identificacion, FechaNacimiento, LugarNacimiento, FechaExpedicion, LugarExpedicion, RH, Estatura, Estado) SELECT Nombres, Apellidos, Identificacion, FechaNacimiento, LugarNacimiento, FechaExpedicion, LugarExpedicion, RH, Estatura, Estado FROM Personass WHERE ID = "
+        frase_concatenada1 = frease1 + " " + str(numero_aleatorio)
+   
+
+        connection = conectar_bd()
         cursor = connection.cursor()
-
-        # Ejecuta una consulta SQL para obtener los datos
-        cursor.execute('SELECT * FROM Personas')
+       
+        cursor.execute(frase_concatenada1)
+        connection.commit()
+        cursor.execute(frase_concatenada)
         datos = cursor.fetchall()
-
-        # Cierra la conexión a la base de datos
         connection.close()
 
-        return render_template('mostrar_datos.html', datos=datos)
-   
+        
+         
+
+        return render_template('mostrar_datos.html', datos=datos)  # Pasa los datos a la plantilla
+    return render_template('login.html')
+@app.route('/reportes')
+def reportes():
+    if 'username' in session:
+        # Recupera los datos de la base de datos
+         
+
+
+        connection = conectar_bd()
+        cursor = connection.cursor()
+        cursor.execute("select * from Reporte")
+       
+        datos = cursor.fetchall()
+        connection.close()
+
+        
+         
+
+        return render_template('reportes.html', datos=datos)  # Pasa los datos a la plantilla
+    return render_template('login.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

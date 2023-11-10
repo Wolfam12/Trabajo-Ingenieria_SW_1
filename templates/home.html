@@ -11,12 +11,14 @@
     <div id="camera-container"></div>
     
     <button id="verificar-cedula-button" class="home-button">Verificar Cédula</button>
-    <a href="/generar-informe" class="home-button">Generar Informe</a>
+    <button id="generar-informe" class="home-button">Generar Informe</button>
+   
     <a href="/logout">Logout</a>
     
     <script>
        const verificarCedulaButton = document.getElementById("verificar-cedula-button");
-        const cameraContainer = document.getElementById("camera-container");
+       const cameraContainer = document.getElementById("camera-container");
+       const generarInforme = document.getElementById("generar-informe");
 
         verificarCedulaButton.addEventListener("click", function () {
             // Accede a la cámara del dispositivo
@@ -42,6 +44,17 @@
                     console.error("Error al acceder a la cámara:", error);
                 });
         });
+
+        generarInforme.addEventListener("click", function () {
+            // Accede a la cámara del dispositivo
+            
+
+                        // Redirige a la página deseada después de 5 segundos
+                        window.location.href = '/reportes'; // Cambia '/otra-pagina' por la URL que desees
+                    }, 5000)
+              
+                
+       
     </script>
 </body>
 </html>
