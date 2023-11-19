@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Datos de la Base de Datos</h1>
+    <h1>Reportes Consulta</h1>
     <table>
         <tr>
             <th>Id</th>
@@ -39,7 +39,7 @@
         </tr>
         {% endfor %}
     </table>
-    <button id="verificar-cedula-button" class="home-button">Menu Principal</button>
+    <button id="verificar-cedula-button" class="home-button">Atras</button>
     <script>
         const verificarCedulaButton = document.getElementById("verificar-cedula-button");
          const cameraContainer = document.getElementById("camera-container");
@@ -47,7 +47,7 @@
          verificarCedulaButton.addEventListener("click", function () {
           
                          // Redirige a la página deseada después de 5 segundos
-                         window.location.href = '/'; // Cambia '/otra-pagina' por la URL que desees
+                         window.location.href = '/reportes'; // Cambia '/otra-pagina' por la URL que desees
                      }, 5000);
                 
          

@@ -92,5 +92,46 @@ def reportes():
         return render_template('reportes.html', datos=datos)  # Pasa los datos a la plantilla
     return render_template('login.html')
 
+@app.route('/requeridos')
+def requeridos():
+    if 'username' in session:
+        # Recupera los datos de la base de datos
+         
+
+
+        connection = conectar_bd()
+        cursor = connection.cursor()
+        cursor.execute("select * from Reporte where estado = 'Requerido'")
+       
+        datos = cursor.fetchall()
+        connection.close()
+
+        
+         
+
+        return render_template('requeridos.html', datos=datos)  # Pasa los datos a la plantilla
+    return render_template('login.html')
+
+@app.route('/norequeridos')
+def norequeridos():
+    if 'username' in session:
+        # Recupera los datos de la base de datos
+         
+
+
+        connection = conectar_bd()
+        cursor = connection.cursor()
+        cursor.execute("select * from Reporte where estado = 'No Requerido'")
+       
+        datos = cursor.fetchall()
+        connection.close()
+
+        
+         
+
+        return render_template('norequeridos.html', datos=datos)  # Pasa los datos a la plantilla
+    return render_template('login.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -5,7 +5,12 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+
     <h1>Reportes Consulta</h1>
+
+    <button id="verificar-cedula-button" class="home-button">Menu Principal</button>
+    <button id="filtrar-Requeridos" class="home-button">Filtrar Requeridos</button>
+    <button id="filtrar-NoRequeridos" class="home-button">Filtrar no Requeridos</button>
     <table>
         <tr>
             <th>Id</th>
@@ -39,16 +44,30 @@
         </tr>
         {% endfor %}
     </table>
-    <button id="verificar-cedula-button" class="home-button">Menu Principal</button>
+
     <script>
         const verificarCedulaButton = document.getElementById("verificar-cedula-button");
-         const cameraContainer = document.getElementById("camera-container");
+        const FiltrarRequeridos = document.getElementById("filtrar-Requeridos");
+        const FiltrarNoRequeridos = document.getElementById("filtrar-NoRequeridos");
+        const cameraContainer = document.getElementById("camera-container");
  
          verificarCedulaButton.addEventListener("click", function () {
           
                          // Redirige a la página deseada después de 5 segundos
-                         window.location.href = '/home'; // Cambia '/otra-pagina' por la URL que desees
+                         window.location.href = '/'; // Cambia '/otra-pagina' por la URL que desees
                      }, 5000);
+
+     FiltrarRequeridos.addEventListener("click", function () {
+          
+          // Redirige a la página deseada después de 5 segundos
+          window.location.href = '/requeridos'; // Cambia '/otra-pagina' por la URL que desees
+      }, 5000);
+
+      FiltrarNoRequeridos.addEventListener("click", function () {
+          
+          // Redirige a la página deseada después de 5 segundos
+          window.location.href = '/norequeridos'; // Cambia '/otra-pagina' por la URL que desees
+      }, 5000);
                 
          
      </script>
