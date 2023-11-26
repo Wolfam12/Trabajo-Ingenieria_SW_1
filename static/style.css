@@ -1,116 +1,116 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    text-align: center;
-    padding: 20px;
-}
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        padding: 20px;
+    }
 
-h1 {
-    color: #333;
-}
+    h1 {
+        color: #333;
+    }
 
-form {
-    background: #fff;
-    border: 1px solid #ccc;
-    padding: 20px;
-    max-width: 400px;
-    margin: 0 auto;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    form {
+        background: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        max-width: 400px;
+        margin: 0 auto;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-label {
-    display: block;
-    margin-bottom: 10px;
-    color: #333;
-    font-weight: bold;
-}
+    label {
+        display: block;
+        margin-bottom: 10px;
+        color: #333;
+        font-weight: bold;
+    }
 
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px -10px 10px 10px; /* 10px arriba, 20px derecha, 15px abajo, 5px izquierda */
+    input[type="text"],
+    input[type="password"],
+    input[type="email"]  {
+        width: 100%;
+        padding: 10px -10px 10px 10px; /* 10px arriba, 20px derecha, 15px abajo, 5px izquierda */
 
-    margin-bottom: 25px;
-    margin-right: 25px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+        margin-bottom: 25px;
+        margin-right: 25px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
 
-input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
 
-input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-/* Estilo para la página "Mostrar Datos" */
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    /* Estilo para la página "Mostrar Datos" */
 
-h1 {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
+    h1 {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+    }
 
-table {
-    border-collapse: collapse;
-    width: 80%;
-    margin: 20px auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+    table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
 
-table th, table td {
-    padding: 10px;
-    text-align: left;
-}
+    table th, table td {
+        padding: 10px;
+        text-align: left;
+    }
 
-table th {
-    background-color: #333;
-    color: #fff;
-}
+    table th {
+        background-color: #333;
+        color: #fff;
+    }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
 
-a {
-    display: block;
-    width: 100px;
-    margin: 20px auto;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-}
+    a {
+        display: block;
+        width: 100px;
+        margin: 20px auto;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
 
-a:hover {
-    background-color: #555;
-}
-/* Estilo para los botones */
-.home-button {
-    background-color: #3498db; /* Color de fondo */
-    color: #fff; /* Color del texto */
-    border: none; /* Sin borde */
-    padding: 10px 20px; /* Espaciado interno */
-    cursor: pointer; /* Cursor de puntero al pasar el ratón */
-    border-radius: 5px; /* Bordes redondeados */
-    font-size: 16px; /* Tamaño de fuente */
-    margin: 5px; /* Margen exterior */
-    transition: background-color 0.3s ease; /* Transición de color de fondo al pasar el ratón */
-  }
-  
-  /* Cambio de color al pasar el ratón */
-  .home-button:hover {
-    background-color: #45a049; /* Cambio de color al pasar el ratón */
-  }
-  
+    a:hover {
+        background-color: #555;
+    }
+    /* Estilo para los botones */
+    .home-button {
+        background-color: #3498db; /* Color de fondo */
+        color: #fff; /* Color del texto */
+        border: none; /* Sin borde */
+        padding: 10px 20px; /* Espaciado interno */
+        cursor: pointer; /* Cursor de puntero al pasar el ratón */
+        border-radius: 5px; /* Bordes redondeados */
+        font-size: 16px; /* Tamaño de fuente */
+        margin: 5px; /* Margen exterior */
+        transition: background-color 0.3s ease; /* Transición de color de fondo al pasar el ratón */
+    }
+    
+    /* Cambio de color al pasar el ratón */
+    .home-button:hover {
+        background-color: #45a049; /* Cambio de color al pasar el ratón */
+    }
